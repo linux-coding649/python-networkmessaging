@@ -1,0 +1,14 @@
+[Unit]
+Description="Python Messaging Service (That is compatible with telnet) UNENCRYPTED"
+After=network.service
+
+[Service]
+ExecStart=/usr/bin/python3 -u messages_network.py
+WorkingDirectory=/usr/local/pymessages
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=_servicecodeuser
+
+[Install]
+WantedBy=multi-user.target
